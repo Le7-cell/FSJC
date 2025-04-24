@@ -1,14 +1,5 @@
 from torch import nn
-# 修改前: from torchvision.models.utils import load_state_dict_from_url
-# 替代方案1：使用 torch.hub 加载
-from torch.hub import load_state_dict_from_url
-
-# 或者替代方案2：直接从 torchvision 的 _internally_replaced_utils 导入
-try:
-    from torchvision.models._api import load_state_dict_from_url
-except ImportError:
-    from torchvision._internally_replaced_utils import load_state_dict_from_url
-
+from torchvision.models.utils import load_state_dict_from_url
 import torch.nn.functional as F
 
 __all__ = ['MobileNetV2', 'mobilenet_v2']
